@@ -12,6 +12,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { AppRoutingModule } from './app-routing.module';
 import { PostListComponent } from './components/post-list/post-list.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { SearchComponent } from './components/search/search.component';
 
 
 @NgModule({
@@ -20,7 +22,9 @@ import { PostListComponent } from './components/post-list/post-list.component';
     PostFeedComponent,
     HeaderComponent,
     FooterComponent,
-    PostListComponent
+    PostListComponent,
+    ProfileComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,24 @@
+<div class="profile-container">
+  <div class="profile-header">
+    <img src="assets/profilePic.jpg" alt="Profile Pic" class="profile-pic" />
+    <div class="profile-info">
+      <h2>{{ username }}</h2>
+      <p>Posts: {{ posts.length }} | Followers: 150 | Following: 180</p>
+    </div>
+  </div>
+
+  <div class="profile-bio">
+    <p><strong>Name:</strong> {{ username }}</p>
+    <p><strong>Bio:</strong> Developer | Photographer | Traveller</p>
+  </div>
+
+  <hr />
+
+  <div class="post-gallery">
+    <img
+      *ngFor="let post of posts"
+      [src]="convertToDisplayable(post.imageUrl)"
+      [alt]="post.caption"
+    />
+  </div>
+</div>

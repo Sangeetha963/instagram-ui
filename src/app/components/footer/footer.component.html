@@ -1,7 +1,11 @@
 <!-- footer.component.html -->
 <footer class="footer-nav">
-  <div class="nav-icon" (click)="goToHome()">🏠</div>
-  <div class="nav-icon">🔍</div>
-  <div class="nav-icon clickable" (click)="goToPostFeed()">post</div>
-  <div class="nav-icon">👤</div>
+  <div
+    class="nav-icon"
+    *ngFor="let icon of icons"
+    (click)="onIconClick(icon.action)"
+  >
+    <img [src]="icon.path" [alt]="icon.name" />
+  </div>
 </footer>
+

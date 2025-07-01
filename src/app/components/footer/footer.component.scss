@@ -1,20 +1,24 @@
 .footer-nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #fff;
+  padding: 0.8rem 0;
+  border-top: 1px solid #ddd;
   position: fixed;
   bottom: 0;
   width: 100%;
-  background-color: #f07e95;
-  color: white;
-  display: flex;
-  justify-content: space-around;
-  padding: 1rem 0;
-  font-size: 1.5rem;
-  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+  z-index: 1000;
 }
 
-.nav-icon {
-  cursor: default;
+.nav-icon img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  filter: grayscale(100%);
+  transition: filter 0.3s;
 }
 
-.clickable {
-  cursor: pointer;
+.nav-icon:hover img {
+  filter: none;
 }

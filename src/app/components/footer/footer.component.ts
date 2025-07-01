@@ -7,14 +7,28 @@ import { Router } from '@angular/router';
   styleUrls: ['./footer.component.scss']
 })
 export class FooterComponent {
+  icons = [
+    { name: 'Home', path: 'assets/homeIcon.jpg', action: 'home' },
+    { name: 'Search', path: 'assets/searchIcon.jpg', action: 'search' },
+    { name: 'Post', path: 'assets/postIcon.jpg', action: 'post' },
+    { name: 'Profile', path: 'assets/profileIcon.jpg', action: 'profile' }
+  ];
   constructor(private router: Router) {}
 
-  goToPostFeed() {
-    console.log('entered')
-    this.router.navigate(['/post-feed']);
-    console.log('yes')
+  onIconClick(action: string) {
+    switch (action) {
+      case 'home':
+        this.router.navigate(['/']); // or a dedicated home route
+        break;
+      case 'post':
+        this.router.navigate(['/post-feed']);
+        break;
+      case 'search':
+        this.router.navigate(['/search']);
+        break;
+      case 'profile':
+        this.router.navigate(['/profile']);
+        break;
+    }
   }
-  goToHome() {
-  this.router.navigate(['/']);
-}
 }

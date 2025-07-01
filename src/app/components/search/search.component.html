@@ -1,0 +1,20 @@
+<div class="search-container">
+  <input
+    type="text"
+    placeholder="Search users..."
+    [(ngModel)]="query"
+    class="search-input"
+  />
+
+  <div class="results" *ngIf="filteredUsers.length">
+    <div *ngFor="let user of filteredUsers" class="user-card">
+      <img [src]="user.profilePic" alt="Profile" />
+      <div>
+        <strong>{{ user.username }}</strong>
+        <p>{{ user.name }}</p>
+      </div>
+    </div>
+  </div>
+
+  <p *ngIf="!filteredUsers.length && query">No results found.</p>
+</div>
