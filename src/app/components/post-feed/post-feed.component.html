@@ -1,0 +1,19 @@
+<div class="post-form">
+  <!-- Author Input -->
+  <input [(ngModel)]="newPost.author" placeholder="Your Name" class="input-field" />
+
+  <!-- Caption Input -->
+  <textarea [(ngModel)]="newPost.caption" placeholder="Write a caption..." class="input-field"></textarea>
+
+  <!-- File Upload -->
+  <label class="upload-btn">
+    📸 Upload Image
+    <input type="file" (change)="handleImageUpload($event)" hidden />
+  </label>
+
+  <!-- Preview Image -->
+  <img *ngIf="newPost.imageUrl" [src]="newPost.imageUrl" class="preview-img" />
+
+  <!-- Post Button -->
+  <button (click)="createPost()" class="post-btn">Post</button>
+</div>

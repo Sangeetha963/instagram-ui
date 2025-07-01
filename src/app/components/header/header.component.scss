@@ -1,0 +1,14 @@
+.header {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  background-color: #f07e95;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  height: 40px;
+  width: auto;
+  margin-right: 10px;
+  border-radius: 8px; // optional, for a rounded look
+}

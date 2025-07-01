@@ -1,0 +1,20 @@
+.footer-nav {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #f07e95;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 0;
+  font-size: 1.5rem;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.2);
+}
+
+.nav-icon {
+  cursor: default;
+}
+
+.clickable {
+  cursor: pointer;
+}
