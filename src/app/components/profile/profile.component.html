@@ -1,12 +1,14 @@
 <div class="profile-container">
+  <!-- Profile Header -->
   <div class="profile-header">
     <img src="assets/profilePic.jpg" alt="Profile Pic" class="profile-pic" />
     <div class="profile-info">
-      <h2>{{ username }}</h2>
-      <p>Posts: {{ posts.length }} | Followers: 150 | Following: 180</p>
+      <h2 class="username">{{ username }}</h2>
+      <p class="stats">Posts: {{ posts.length }} | Followers: 150 | Following: 180</p>
     </div>
   </div>
 
+  <!-- Bio Section -->
   <div class="profile-bio">
     <p><strong>Name:</strong> {{ username }}</p>
     <p><strong>Bio:</strong> Developer | Photographer | Traveller</p>
@@ -14,11 +16,27 @@
 
   <hr />
 
+  <!-- Gallery -->
   <div class="post-gallery">
-    <img
-      *ngFor="let post of posts"
-      [src]="convertToDisplayable(post.imageUrl)"
-      [alt]="post.caption"
-    />
+    <div class="gallery-item" *ngFor="let post of posts" (click)="openModal(post)">
+      <img
+        [src]="convertToDisplayable(post.imageUrl)"
+        [alt]="post.caption"
+        class="gallery-img"
+      />
+      <div class="overlay"></div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal for Enlarged Post -->
+<div class="modal-backdrop" *ngIf="selectedPost" (click)="closeModal()">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <img [src]="convertToDisplayable(selectedPost.imageUrl)" alt="Full View" />
+    <div class="modal-caption">
+      <h3>{{ selectedPost.author }}</h3>
+      <p>{{ selectedPost.caption }}</p>
+    </div>
+    <span class="modal-close" (click)="closeModal()">×</span>
   </div>
 </div>

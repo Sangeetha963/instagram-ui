@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { PostListComponent } from './components/post-list/post-list.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
+import { ScrollAnimateDirective } from './directives/scroll-animate.directive';
 
 
 @NgModule({
@@ -24,7 +25,8 @@ import { SearchComponent } from './components/search/search.component';
     FooterComponent,
     PostListComponent,
     ProfileComponent,
-    SearchComponent
+    SearchComponent,
+    ScrollAnimateDirective
   ],
   imports: [
     BrowserModule,

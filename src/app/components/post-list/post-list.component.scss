@@ -7,6 +7,14 @@
   border-radius: 8px;
   overflow: hidden;
   font-family: 'Arial', sans-serif;
+  opacity: 0;
+  transform: scale(0.95);
+  transition: all 0.5s ease-in-out;
+}
+
+.animate-zoom {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .post-img {
@@ -28,7 +36,8 @@
 }
 
 .icon:hover {
-  transform: scale(1.1);
+  transform: scale(1.2);
+  transition: transform 0.2s;
 }
 
 .likes-count {

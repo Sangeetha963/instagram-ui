@@ -1,44 +1,36 @@
-<div *ngFor="let post of posts" class="post-card">
-  <!-- Post Image -->
+<div
+  *ngFor="let post of posts"
+  class="post-card"
+  appScrollAnimate
+>
   <img [src]="convertToDisplayable(post.imageUrl)" alt="Image" class="post-img" />
 
-  <!-- Post Details -->
   <div class="post-content">
-    <!-- Action icons -->
     <div class="post-actions">
       <span (click)="likePost(post.id)" class="icon">❤️</span>
       <span class="icon">💬</span>
       <span class="icon">📤</span>
     </div>
 
-    <!-- Like Count -->
     <p class="likes-count">{{ likes[post.id]?.length || 0 }} likes</p>
+    <p class="caption"><strong>{{ post.author }}</strong> {{ post.caption }}</p>
 
-    <!-- Caption -->
-    <p class="caption">
-      <strong>{{ post.author }}</strong> {{ post.caption }}
-    </p>
-
-    <!-- Comment Preview (1–2) -->
     <div class="comment-preview" *ngIf="comments[post.id]?.length">
       <p *ngFor="let comment of comments[post.id] | slice:0:2">
         <strong>{{ comment.user }}</strong> {{ comment.text }}
       </p>
     </div>
 
-    <!-- Toggle Comment View -->
     <p class="toggle-comments" (click)="toggleDetails(post.id)">
       {{ showDetails[post.id] ? 'Hide all comments' : 'View all comments' }}
     </p>
 
-    <!-- Expanded Comments -->
     <div *ngIf="showDetails[post.id]" class="all-comments">
       <p *ngFor="let comment of comments[post.id]">
         <strong>{{ comment.user }}</strong> {{ comment.text }}
       </p>
     </div>
 
-    <!-- Add Comment -->
     <div class="add-comment">
       <input
         type="text"

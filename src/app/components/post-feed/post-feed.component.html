@@ -1,9 +1,17 @@
-<div class="post-form">
+<div class="post-form animate-entry">
   <!-- Author Input -->
-  <input [(ngModel)]="newPost.author" placeholder="Your Name" class="input-field" />
+  <input
+    [(ngModel)]="newPost.author"
+    placeholder="Your Name"
+    class="input-field"
+  />
 
   <!-- Caption Input -->
-  <textarea [(ngModel)]="newPost.caption" placeholder="Write a caption..." class="input-field"></textarea>
+  <textarea
+    [(ngModel)]="newPost.caption"
+    placeholder="Write a caption..."
+    class="input-field"
+  ></textarea>
 
   <!-- File Upload -->
   <label class="upload-btn">
@@ -12,8 +20,14 @@
   </label>
 
   <!-- Preview Image -->
-  <img *ngIf="newPost.imageUrl" [src]="newPost.imageUrl" class="preview-img" />
+  <img
+    *ngIf="newPost.imageUrl"
+    [src]="newPost.imageUrl"
+    class="preview-img fade-in"
+  />
 
   <!-- Post Button -->
-  <button (click)="createPost()" class="post-btn">Post</button>
+  <button (click)="createPost()" class="post-btn bounce-on-hover">
+    Post
+  </button>
 </div>
