@@ -1,0 +1,43 @@
+<div class="story-container">
+  <!-- Story List -->
+  <div class="story-list">
+    <div *ngFor="let story of stories" class="story-circle" (click)="viewStory(story)">
+      <img [src]="convertToDisplayable(story.imageUrl)" [alt]="story.author" />
+      <span>{{ story.author }}</span>
+    </div>
+  </div>
+
+  <!-- Floating Add Story Button -->
+  <div class="add-story-fab" (click)="showAddStoryPopup = true">➕</div>
+
+  <!-- Add Story Modal -->
+  <div class="story-modal" *ngIf="showAddStoryPopup" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <h3>Add a Story</h3>
+      <label class="story-upload">
+        Upload Image
+        <input type="file" (change)="handleStoryUpload($event)" hidden />
+      </label>
+
+      <div *ngIf="previewUrl" class="preview-wrapper">
+        <img [src]="previewUrl" alt="Preview" class="circular-preview" />
+      </div>
+
+      <button class="post-btn" (click)="postStory()">Post Story</button>
+      <button class="close-btn" (click)="closeModal()">×</button>
+    </div>
+  </div>
+
+  <!-- Story View Modal -->
+  <div class="story-modal" *ngIf="selectedStory && !showAddStoryPopup" (click)="closeModal()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+      <img
+        [src]="convertToDisplayable(selectedStory.imageUrl)"
+        class="story-display-img"
+        alt="Viewed Story"
+      />
+      <p class="story-author">{{ selectedStory.author }}</p>
+      <button class="close-btn" (click)="closeModal()">×</button>
+    </div>
+  </div>
+</div>

@@ -15,6 +15,7 @@ import { PostListComponent } from './components/post-list/post-list.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { SearchComponent } from './components/search/search.component';
 import { ScrollAnimateDirective } from './directives/scroll-animate.directive';
+import { StoryFeedComponent } from './components/story-feed/story-feed.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ScrollAnimateDirective } from './directives/scroll-animate.directive';
     PostListComponent,
     ProfileComponent,
     SearchComponent,
-    ScrollAnimateDirective
+    ScrollAnimateDirective,
+    StoryFeedComponent
   ],
   imports: [
     BrowserModule,
